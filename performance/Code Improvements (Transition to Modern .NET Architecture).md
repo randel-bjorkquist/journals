@@ -1,0 +1,25 @@
+# Code Improvements (Transition to Modern .NET Architecture)
+
+I have been building the foundational structure to enable the modernization of our legacy ASP.NET Web Application (currently on .NET Framework 4.7), restructuring the middle-tier and laying the groundwork for a full transition to .NET 8+.
+
+## Key efforts include:
+
+- Establishing `mcsCore.Utilities` and related assemblies as the foundation for shared, reusable components.
+
+- Migrating legacy business logic and data access code from the web project into the middle-tier `mcsCore.Services` class library (currently targeting .NET Standard 2.0 for maximum compatibility with the existing Framework 4.7 web app).
+
+- Building new unit and integration testing projects on .NET 8+ to leverage modern testing frameworks, async support, and performance improvements.
+
+- Designing the architecture with future upgrade in mind: once all legacy dependencies are extracted and refactored into `mcsCore.Services`, the middle-tier will be upgraded to .NET 8+, enabling end-to-end modern .NET benefits (performance, security updates, cross-platform potential, and simplified maintenance).
+
+## What do we gain from this modernization approach?
+
+- **Future-proofing & Long-term Support**: Moves us off the aging .NET Framework (end-of-support looming) to actively supported .NET 8+ with regular LTS releases.
+
+- **Improved Performance & Developer Productivity**: Access to modern language features (C# 12+), better async patterns, and optimized runtime.
+
+- **Cleaner Separation of Concerns**: Decouples business logic from the web UI, making the codebase more maintainable, testable, and reusable across potential future front-ends.
+
+- **Enhanced Testability**: New tests in .NET 8+ benefit from faster execution, modern assertions, and better tooling, while the phased migration minimizes risk to production.
+
+This structured transition reduces technical debt, lowers maintenance costs, and positions the application for continued evolution without major rewrites.
